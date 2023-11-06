@@ -50,5 +50,32 @@ class BankAccount:
 account = BankAccount(1000)
 account.deposit(500)
 account.withdraw(200)
-print(account.__balance)
+#print(account.__balance)
 print(account.get_balance())  # Результат: 1300
+
+# практика
+"""Розробіть систему для організації подій та завдань.
+Кожна подія має мати назву, дату та опис. Реалізуйте
+методи для додавання нових подій, зміни дати та опису.
+Використайте інкапсуляцію для захисту дати від неправильних змін."""
+
+class CalendarApp:
+    def __init__(self, name, date, description):
+        self.__name = name
+        self.__date = date
+        self.__description = description
+
+    def get_name(self):
+        return self.__name
+
+    def get_date(self):
+        return self.__date
+
+    def get_description(self):
+        return self.__description
+
+    def set_data(self, new_data):
+        self.__date = new_data
+
+    def set_description(self, new_description):
+        self.__description = new_description
