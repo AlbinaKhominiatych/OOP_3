@@ -3,11 +3,13 @@
 "email". Застосуйте інкапсуляцію, щоб забезпечити, що ці
 дані можна отримати лише через методи класу."""
 #Рівень доступу Private (приватний)
+from dataclasses import dataclass
+
+@dataclass
 class User:
-    def __init__(self, name, age, email):
-        self._name = name
-        self.__age = age
-        self.__email = email
+    _name: str
+    __age: int
+    __email: str
 
     def get_name(self):
         return self._name
@@ -18,7 +20,14 @@ class User:
     def get_email(self):
         return self.__email
 
+    def change_name(self, name): #set
+        self._name = name
+
+
 user1 = User("Ivan", 19, "example@email.com")
 print(user1.get_name())
 print(user1.get_age())
 print(user1.get_email())
+print(user1)
+user1.change_name('Ivane')
+print(user1)
