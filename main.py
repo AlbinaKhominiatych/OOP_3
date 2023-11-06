@@ -23,6 +23,8 @@ class User:
     def change_name(self, name): #set
         self._name = name
 
+    def set_mail(self, mail):
+        self.__email = mail
 
 user1 = User("Ivan", 19, "example@email.com")
 print(user1.get_name())
@@ -30,4 +32,6 @@ print(user1.get_age())
 print(user1.get_email())
 print(user1)
 user1.change_name('Ivane')
+print(user1)
+user1.set_mail("new_mail@mail.com")
 print(user1)
